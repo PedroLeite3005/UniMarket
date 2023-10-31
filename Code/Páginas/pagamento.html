@@ -4,132 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Pagamento</title>
-    
-
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Estilos personalizados -->
-    <style>
-        .payment-container {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .payment-button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-        }
-
-        .payment-button:hover {
-            background-color: #0056b3;
-        }
-
-        .payment-option {
-            display: inline-block;
-            margin-right: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../PastaJS/pagamento.js"></script>
 </head>
 <body>
-
-<div class="container payment-container">
-    <h1 class="text-center">Página de Pagamento</h1>
-    <form>
-        <div class="form-group">
-            <label for="nomeCartao">Nome no Cartão:</label>
-            <input type="text" class="form-control" id="nomeCartao" placeholder="Seu nome no cartão" required>
-        </div>
-        <div class="form-group">
-            <label for="numeroCartao">Número do Cartão:</label>
-            <input type="text" class="form-control" id="numeroCartao" placeholder="Número do cartão" required>
-        </div>
-        <div class="form-group">
-            <label for="dataValidade">Data de Validade:</label>
-            <input type="text" class="form-control" id="dataValidade" placeholder="MM/AA" required>
-        </div>
-        <div class="form-group">
-            <label for="cvv">CVV:</label>
-            <input type="text" class="form-control" id="cvv" placeholder="CVV" required>
-        </div>
-        <div class="form-group">
-            <label for="valor">Valor a Pagar:</label>
-            <input type="text" class="form-control" id="valor" placeholder="Valor a pagar" required>
-        </div>
-
-        <div class="form-group">
-            <label for="opcoesPagamento">Escolha a forma de pagamento:</label>
-            <div class="payment-option">
-                <input type="radio" name="formaPagamento" value="pix" id="pix">
-                <label for="pix">Pix</label>
-            </div>
-            <div class="payment-option">
-                <input type="radio" name="formaPagamento" value="debito" id="debito">
-                <label for="debito">Débito</label>
-            </div>
-            <div class="payment-option">
-                <input type="radio" name="formaPagamento" value="cartaoCredito" id="cartaoCredito">
-                <label for="cartaoCredito">Cartão de Crédito</label>
-            </div>
-        </div>
-        
-     
-        <div class="modal fade" id="pixModal" tabindex="-1" role="dialog" aria-labelledby="pixModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="pixModalLabel">Pagamento Pix</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Tempo Restante: <span id="cronometro">10:00</span></p>
-                        <img src="../Data/ImgProd/qrcode.png" alt="QR Code Fake" width="200px">
-                    </div>
+<div>
+    <a href="./produtos.html"><button class="btn btn-danger border border-dark mx-2 my-2">Voltar</button></a>
+    <div class="container col-5 m-auto border border-secondary rounded my-1">
+        <h1 class="text-center my-1">Página de Pagamento</h1>
+        <form>
+            <div class="form-group mt-2">
+                <label for="nomeCartao" class="mt-1">Nome no Cartão:</label>
+                <input type="text" class="form-control" id="nomeCartao" placeholder="Seu nome no cartão" required>
+    
+                <label for="numeroCartao" class="mt-1">Número do Cartão:</label>
+                <input type="text" class="form-control" id="numeroCartao" placeholder="Número do cartão" required>
+    
+                <label for="dataValidade" class="mt-1">Data de Validade:</label>
+                <input type="text" class="form-control" id="dataValidade" placeholder="MM/AA" required>
+                
+                <label for="cvv" class="mt-1">CVV:</label>
+                <input type="text" class="form-control" id="cvv" placeholder="CVV" required>
+            
+                <label for="valor" class="mt-1">Valor a Pagar:</label>
+                <input type="text" class="form-control" id="valor" placeholder="Valor a pagar" required>
+    
+                <label for="opcoesPagamento">Escolha a forma de pagamento:</label>
+                <div class="d-flex inline-block">
+                    <input type="radio" name="formaPagamento" value="pix" id="pix" data-bs-toggle="modal" 
+                    data-bs-target="#exampleModal" onclick="startCountdown()">
+                    <label for="pix">Pix</label>
+               
+                    <input class="ms-2" type="radio" name="formaPagamento" value="debito" id="debito">
+                    <label for="debito">Débito</label>
+                
+                    <input class="ms-2" type="radio" name="formaPagamento" value="cartaoCredito" id="cartaoCredito">
+                    <label for="cartaoCredito">Cartão de Crédito</label>
                 </div>
             </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary btn-block col-10 my-2">Pagar</button>
+            </div>
+        </form>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Pagamento Pix</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p>Tempo Restante: <span id="cronometro">10:00</span></p>
+                    <img src="../Data/qrcode.png" alt="QR Code Fake" width="200px">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+              </div>
+            </div>
         </div>
-        <script>
-            document.querySelector('input[name="formaPagamento"]').addEventListener('change', function() {
-                if (this.value === 'pix') {
-                    $('#pixModal').modal('show');
-                    startCountdown(10 * 60); // 10 minutos em segundos
-                } else {
-                    $('#pixModal').modal('hide');
-                }
-            });
-            
-            function startCountdown(seconds) {
-                const countdownDisplay = document.getElementById('cronometro');
-                
-                let timer = seconds;
-                const interval = setInterval(function() {
-                    const minutes = Math.floor(timer / 60);
-                    const seconds = timer % 60;
-                    countdownDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-                    timer--;
-            
-                    if (timer < 0) {
-                        clearInterval(interval);
-                        countdownDisplay.textContent = 'Tempo expirado';
-                    }
-                }, 1000);
-            }
-            </script>
-        
-
-        <button type="submit" class="btn payment-button btn-block">Pagar</button>
-    </form>
+    </div>
 </div>
 
-<!-- Adicione os links para os scripts do Bootstrap e jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

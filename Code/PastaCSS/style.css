@@ -17,6 +17,8 @@
     transform: translate(-50%, -50%);
     left: 700px;
     top: 250px; 
+    left: 200px;
+    top: 150px; 
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -25,6 +27,8 @@
     position: absolute;
     left: 520px;
     top: 400px;
+    left: 600px;
+    top: 300px;
     max-width: 100%;
     width: 350px; 
     height: 40px; 
@@ -43,6 +47,11 @@
     animation: slideRight 2s ease infinite alternate; 
     font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-size: 10px;
+    top: 0px;
+    left: 500px;
+    animation: slideRight 2s ease infinite alternate; 
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 20px;
     max-width: calc(100% - 100px);
   }
   

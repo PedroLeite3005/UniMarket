@@ -14,9 +14,9 @@
         <div class="container-fluid">
             <div class="d-flex justify-content-start">
                 <i class="fa-solid fa-shop mx-1 py-2"></i>
-                <form class="d-flex" role="search">
-                    <input class="form-control border border-dark" type="search" placeholder="Pesquisar" aria-label="Search">
-                    <button class="btn btn-success" type="submit">Pesquisar</button>
+                <form class="d-flex" role="search" id="termoPesquisa" name="termoPesquisa">
+                    <input class="form-control border border-dark" type="search" placeholder="Pesquisar" aria-label="Search" name="pesquisa">
+                    <button class="btn btn-success" type="button" onclick="postPesquisar()">Pesquisar</button>
                 </form>
             </div>
             <h2 class="navbar-brand">Unimarket</h2>
@@ -52,7 +52,7 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="./addProduto.html">Adicionar</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Remover</a></li>
+                                <li><a class="dropdown-item" href="./excluirProduto.html">Remover</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -62,5 +62,6 @@
     </nav>
     
     <div id="cards" class="d-flex flex-wrap"></div>
+    <div id="pesquisa" class="d-flex flex-wrap"></div>
 </body>
 </html>
