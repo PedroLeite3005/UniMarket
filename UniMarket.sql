@@ -11,8 +11,11 @@ CREATE TABLE IF NOT EXISTS Cliente (
 	id_cliente INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL,
+    cpf CHAR(11) NOT NULL,
+	rg CHAR(15) NOT NULL,
+    endereco VARCHAR(100) NOT NULL,
     senha VARCHAR(100) NOT NULL,
-    admin BOOLEAN NOT NULL
+    admin BOOLEAN 
 );
 
 CREATE TABLE IF NOT EXISTS Produtos (
@@ -28,11 +31,13 @@ CREATE TABLE IF NOT EXISTS Produtos (
 
 CREATE TABLE IF NOT EXISTS Carrinho (
     id_carrinho INT PRIMARY KEY AUTO_INCREMENT,
+    id_cliente INT,
     id_produto INT,
     quantidade INT NOT NULL,
 	created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_produto) REFERENCES Produtos(id_produto)
+    FOREIGN KEY (id_produto) REFERENCES Produtos(id_produto),
+    FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente)
 );
 
 CREATE TABLE IF NOT EXISTS Pagamento (

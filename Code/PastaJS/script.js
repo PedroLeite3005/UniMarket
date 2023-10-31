@@ -13,7 +13,7 @@ window.onload = async function(){
                     <div class="col-12">
                         <div class="card d-inline-block my-2 mx-2">
                             <div class="card-body text-center">
-                                <img src="../Data/ImgProd/${dados[i].id_produto}.png" class="card-img-top" alt="Imagem Produto">
+                                <img src="../Data/ImgProd/${dados[i].id_produto}.png" class="card-img-top" alt="Imagem Produto" style="height: 200px;">
                                 <h5 class="card-title">${dados[i].nome}</h5>
                                 <p class="card-text">R$ ${dados[i].preco}</p>
                                 <a href="#" class="btn btn-primary col-12">Adicionar ao carrinho!</a>
