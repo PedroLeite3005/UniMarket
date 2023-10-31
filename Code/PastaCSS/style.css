@@ -15,17 +15,18 @@
     height: auto;
     position: absolute;
     transform: translate(-50%, -50%);
-    left: 220px;
+    left: 700px;
     top: 250px; 
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .button{
     color: rgb(255, 255, 255);
     position: absolute;
-    left: 270px;
-    top: 350px;
+    left: 520px;
+    top: 400px;
     max-width: 100%;
-    width: 300px; 
+    width: 350px; 
     height: 40px; 
     font-size: 20px; 
     border-radius: 20px;
@@ -37,10 +38,11 @@
 
 .animated-heading {
     position: relative;
-    top: 260px;
-    left: 100px;
+    top: 100px;
+    left: 50px;
     animation: slideRight 2s ease infinite alternate; 
     font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 10px;
     max-width: calc(100% - 100px);
   }
   
@@ -49,7 +51,7 @@
       transform: translateX(0);
     }
     80% {
-      transform: translateX(30px); /* Ou qualquer valor desejado */
+      transform: translateX(10px); /* Ou qualquer valor desejado */
     }
   }
 
