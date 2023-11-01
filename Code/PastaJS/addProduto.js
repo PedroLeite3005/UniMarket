@@ -7,4 +7,11 @@ function addProduto() {
         method: "POST",
         body: dados
     });
+
+    var toast = new bootstrap.Toast(document.getElementById('liveToast'));
+    toast.show();
+
+    setTimeout(function () {
+        location.reload();
+    }, 1000); //(2 segundos)
 }

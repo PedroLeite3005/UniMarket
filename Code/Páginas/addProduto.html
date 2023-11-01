@@ -19,11 +19,22 @@
                         Preço: <input class="form-control border border-dark my-1" type="number" name="preco"/>
                         Descrição: <textarea class="form-control border border-dark my-1" rows="3" name="descricao"></textarea>
                         Imagens: <input class="form-control border border-dark my-1" type="file" name="imagens" id="imagens"/>
-                        <button type="button" class="btn btn-primary my-1 border border-dark py-2" onclick="addProduto()">Salvar</button>
+                        <button type="button" class="btn btn-primary my-1 border border-dark py-2" onclick="addProduto()" id="liveToastBtn">Salvar</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">ADICIONADO</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Produto adicionado com sucesso!
+            </div>
+        </div>
+    </div>  
 </body>
 </html>
