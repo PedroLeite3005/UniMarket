@@ -1,91 +1,41 @@
 .videobackground { 
-    object-fit: cover;
-    height: 100%;
-    z-index: -1;
-    width: 100%;
-    bottom: 300px;
-    right: 400px;
-    position: fixed;
-    transform: scale(0.5);  
-    opacity: 0.9;  
+  object-fit: cover;
+  height: 100%;
+  z-index: -1;
+  width: 100%;
+  bottom: 300px;
+  right: 400px;
+  position: fixed;
+  transform: scale(0.5);  
+  opacity: 0.9;  
 }
 
 .Logocustom {
-    max-width: 100%;
-    height: auto;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 700px;
-    top: 250px; 
-    left: 200px;
-    top: 150px; 
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  height: auto;
+  position: absolute;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .button{
-    color: rgb(255, 255, 255);
-    position: absolute;
-    left: 520px;
-    top: 400px;
-    left: 600px;
-    top: 300px;
-    max-width: 100%;
-    width: 350px; 
-    height: 40px; 
-    font-size: 20px; 
-    border-radius: 20px;
-    border: none;
-    background-color: #000000;
-    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    transition: box-shadow .2s ease-in-out;
-}
-
-.animated-heading {
-    position: relative;
-    top: 100px;
-    left: 50px;
-    animation: slideRight 2s ease infinite alternate; 
-    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    font-size: 10px;
-    top: 0px;
-    left: 500px;
-    animation: slideRight 2s ease infinite alternate; 
-    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    font-size: 20px;
-    max-width: calc(100% - 100px);
-  }
-  
-  @keyframes slideRight {
-    0% {
-      transform: translateX(0);
-    }
-    80% {
-      transform: translateX(10px); /* Ou qualquer valor desejado */
-    }
-  }
-
-.custom-div{
-  display: flex; 
-  width: 100%;
-  height: 100%;
-  background-color: #000000;
-}
-
-/* Estilos para o botão */
-#mostrarOpcoes {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
+  color: rgb(255, 255, 255);
+  position: relative;
+  width: 350px; 
+  height: 40px; 
+  font-size: 20px; 
+  top: 100px;
+  border-radius: 20px;
   border: none;
-  border-radius: 3px;
+  background-color: #000000;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  transition: box-shadow .2s ease-in-out;
   cursor: pointer;
 }
 
-#mostrarOpcoes:hover {
-  background-color: #0056b3;
-}
-
-/* Estilos para as opções de pagamento */
-.opcao-pagamento {
-  margin-right: 10px;
+.custom-div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

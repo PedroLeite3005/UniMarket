@@ -6,12 +6,11 @@
         $query= "DELETE FROM produtos WHERE id_produto=$id_produto";
         $resultado = mysqli_query($con, $query);
         
-        if($resultado) {
-            echo "Produto excluído com sucesso";
-           } else {
-            echo "Erro ao excluir o produto";
-           }
-    // feche a conexão
-    //mysqli_close($con);
+        $caminhoImagem = "../Data/ImgProd/" . $id_produto . ".png";
+    
+        if (file_exists($caminhoImagem)) {
+            unlink($caminhoImagem);
+        }
+
 }
 ?>
