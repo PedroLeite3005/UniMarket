@@ -16,7 +16,7 @@ window.onload = async function(){
                                 <img src="../Data/ImgProd/${dados[i].id_produto}.png" class="card-img-top" alt="Imagem Produto" style="height: 200px;">
                                 <h5 class="card-title">${dados[i].nome}</h5>
                                 <p class="card-text">R$ ${dados[i].preco}</p>
-                                <a href="#" class="btn btn-primary col-12">Adicionar ao carrinho!</a>
+                                <button class="btn btn-primary col-12" type="button" onclick="addCarrinho(${dados[i].id_produto})">Adicionar ao carrinho</button>
                             </div>
                         </div>
                     </div>
@@ -69,4 +69,8 @@ function postPesquisar(){
     })
     
     document.getElementById('cards').innerHTML = null;
+}
+
+function addCarrinho(id_produto) {
+   
 }

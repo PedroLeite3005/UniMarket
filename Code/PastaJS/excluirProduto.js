@@ -16,7 +16,7 @@ window.onload = async function(){
     <div class="container-fluid"> 
         <div class="row">
             <div class="col-12">
-                <div class="card d-inline-block my-1 mx-1" style="width: 12rem;">
+                <div class="card d-inline-block my-2 mx-1" style="width: 13rem;">
                     <div class="card-body text-center border border-dark rounded">
                         <img src="../Data/ImgProd/${dados[i].id_produto}.png" class="card-img-top" alt="Imagem Produto" style="height: 200px;">
                         <h5 class="card-title">${dados[i].nome}</h5>

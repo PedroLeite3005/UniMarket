@@ -22,8 +22,6 @@ CREATE TABLE IF NOT EXISTS Produtos (
     id_produto INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(255) NOT NULL,
     preco DECIMAL(10, 2) NOT NULL,
-    tamanho VARCHAR(20),
-    peso DECIMAL(10, 2),
     quantidade INT NOT NULL,
     descricao TEXT NOT NULL,
 	created_at DATETIME DEFAULT CURRENT_TIMESTAMP
@@ -33,18 +31,19 @@ CREATE TABLE IF NOT EXISTS Carrinho (
     id_carrinho INT PRIMARY KEY AUTO_INCREMENT,
     id_cliente INT,
     id_produto INT,
+    nome VARCHAR(50) NOT NULL,
+    preco_unidade DECIMAL(10,2) NOT NULL,
     quantidade INT NOT NULL,
-	created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id_produto) REFERENCES Produtos(id_produto),
     FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente)
 );
 
 CREATE TABLE IF NOT EXISTS Pagamento (
     id_pagamento INT PRIMARY KEY AUTO_INCREMENT,
+    id_cliente INT,
     id_carrinho INT,
-    preco_total DECIMAL(10, 2) NOT NULL,
+    preco_total_pagamento DECIMAL(10, 2) NOT NULL,
     metodo_de_pagamento VARCHAR(50) NOT NULL,
-	created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_carrinho) REFERENCES Carrinho(id_carrinho)
+    FOREIGN KEY (id_carrinho) REFERENCES Carrinho(id_carrinho),
+    FOREIGN KEY (id_cliente) REFERENCES Cliente (id_cliente)
 );
