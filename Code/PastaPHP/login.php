@@ -2,7 +2,7 @@
 $nome = $_POST["username"];
 $senha = $_POST["password"];
 
-$con = mysqli_connect("localhost", "root", "", "unimarket");
+$con = mysqli_connect("localhost", "root", "Melyca1243!", "unimarket");
 
 if ($con->connect_error) {
     die("Falha ao conectar ao banco de dados: " . $con->connect_error);
@@ -18,8 +18,8 @@ if ($row) {
     $_SESSION['username'] = $nome;
     $_SESSION['admin'] = $row['admin'];
     
-    if ($row['admin'] != 1) { //==
-        echo json_encode(["redirect" => "../Páginas/produtos.html"]);
+    if ($row['admin'] != 1) { //== joga pra pag do adm
+        echo json_encode(["redirect" => "../indexAdmin.html"]);
     } else {
         echo json_encode(["redirect" => "../indexCliente.html"]);
         //echo json_encode(["redirect" => "../Páginas/produtosCliente.html"]);
