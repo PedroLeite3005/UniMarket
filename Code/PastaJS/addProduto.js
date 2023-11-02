@@ -13,5 +13,5 @@ function addProduto() {
 
     setTimeout(function () {
         location.reload();
-    }, 1000); //(2 segundos)
+    }, 1000); //(1 segundos)
 }

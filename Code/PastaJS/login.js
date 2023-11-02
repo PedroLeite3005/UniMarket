@@ -16,7 +16,7 @@ function login(){
         }
     });
     
-    var user = form.elements['username'].value;
+    var user = form.elements['Email'].value;
     var senha = form.elements['password'].value;
     if(user.length=="" && senha.length==""){
         alert("Preencha os campos para fazer o login!");
