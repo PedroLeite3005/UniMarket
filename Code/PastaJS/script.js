@@ -72,5 +72,22 @@ function postPesquisar(){
 }
 
 function addCarrinho(id_produto) {
-   
+    if (id_produto) {
+        var formData = new FormData();
+        formData.append('id_produto', id_produto);
+
+        fetch("../PastaPHP/produtos_carrinho.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Produto adicionado ao carrinho com sucesso!');
+            } else {
+                alert('Erro ao adicionar o produto ao carrinho.');
+            }
+        });
+    } 
 }
+
+  

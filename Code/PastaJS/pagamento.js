@@ -14,3 +14,13 @@ function startCountdown() {
         }
     }, 1000);
 }
+
+function confirmarPagamento() {
+    var toast = new bootstrap.Toast(document.getElementById('liveToast'));
+    toast.show();
+
+    setTimeout(function () {
+        window.location.href = "../Páginas/produtos.html";
+    }, 2000); //(1 segundos)
+    
+}
