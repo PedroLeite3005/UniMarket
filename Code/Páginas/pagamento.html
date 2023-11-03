@@ -13,7 +13,7 @@
     <a href="./confirmarCompra.html"><button class="btn btn-danger border border-dark mx-2 my-2">Voltar</button></a>
     <div class="container col-5 m-auto border border-secondary rounded my-1">
         <h1 class="text-center my-1">Página de Pagamento</h1>
-        <form>
+        <form id="formPagamento">
             <div class="form-group mt-2">
                 <label for="nomeCartao" class="mt-1">Nome no Cartão:</label>
                 <input type="text" class="form-control" id="nomeCartao" placeholder="Seu nome no cartão" required>
@@ -59,7 +59,7 @@
                     <img src="../Data/qrcode.png" alt="QR Code Fake" width="200px">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="confirmarPagamento()">Feito</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="pix()">Feito</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                 </div>
               </div>

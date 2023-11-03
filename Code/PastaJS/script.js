@@ -80,13 +80,14 @@ function addCarrinho(id_produto) {
             method: "POST",
             body: formData
         })
-        .then(response => {
-            if (response.ok) {
-                alert('Produto adicionado ao carrinho com sucesso!');
-            } else {
-                alert('Erro ao adicionar o produto ao carrinho.');
-            }
-        });
+        .then(response => response.json())
+        .then(data => {
+            var mensagem = data.message;
+            alert(mensagem);
+        })
+        .catch(error => {
+            alert(error);
+        })
     } 
 }
 

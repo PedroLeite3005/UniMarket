@@ -47,5 +47,14 @@ async function atualizarTotalProduto(idProduto, novaQuantidade) {
     method: "POST",
     body: formData
   });
+  
+  fetch("../PastaPHP/attTotalCarrinho.php", {
+    method: "GET"
+  })
+  .then(response => response.json())
+  .then(data => {
+      var totalCarrinhoElement = document.getElementById("totalCarrinho");
+      totalCarrinhoElement.textContent = data.total;
+  });
 
 }

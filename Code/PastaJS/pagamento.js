@@ -16,11 +16,37 @@ function startCountdown() {
 }
 
 function confirmarPagamento() {
+    var form = document.getElementById("formPagamento");
+    var nomeCartao = document.getElementById("nomeCartao");
+    var numeroCartao = document.getElementById("numeroCartao");
+    var dataValidade = document.getElementById("dataValidade");
+    var cvv = document.getElementById("cvv");
+    if (nomeCartao.value === "" || numeroCartao.value === "" || dataValidade.value === "" || cvv.value === "") {
+        alert("Preencha todos os campos do formulário antes de continuar.");
+        return false; 
+
+    }else{
+        fetch("../PastaPHP/pagamento.php", {
+            method: "POST"
+        });
+
+        var toast = new bootstrap.Toast(document.getElementById('liveToast'));
+        toast.show();
+
+        setTimeout(function () {
+            window.location.href = "../Páginas/produtos.html";
+        }, 2000); //(2 segundos)
+    }    
+}
+
+function pix() {
+    fetch("../PastaPHP/pagamento.php", {
+        method: "POST"
+    });
     var toast = new bootstrap.Toast(document.getElementById('liveToast'));
     toast.show();
 
     setTimeout(function () {
         window.location.href = "../Páginas/produtos.html";
-    }, 2000); //(1 segundos)
-    
+    }, 2000); //(2 segundos)
 }
