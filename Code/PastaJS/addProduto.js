@@ -6,12 +6,16 @@ function addProduto() {
     fetch("../PastaPHP/addProduto.php", {
         method: "POST",
         body: dados
-    });
-
-    var toast = new bootstrap.Toast(document.getElementById('liveToast'));
-    toast.show();
-
-    setTimeout(function () {
-        location.reload();
-    }, 1000); //(1 segundos)
+    }).then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                var toast = new bootstrap.Toast(document.getElementById('liveToast'));
+                toast.show();
+                setTimeout(function () {
+                    location.reload();
+                }, 1000); //(1 segundos)
+            } else {
+                alert('Somente imagem PNG válida!');
+            }
+        });
 }

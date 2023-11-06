@@ -1,3 +1,16 @@
+window.onload = async function() {
+    const response = await fetch("../PastaPHP/attTotalCarrinho.php", {
+        method: "GET"
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+                const novoTotal = data.novoTotal;
+                const totalCarrinhoElement = document.getElementById("total");
+                totalCarrinhoElement.textContent = novoTotal;
+        }
+}
+
 function startCountdown() {
     const countdownDisplay = document.getElementById('cronometro');
     const seconds = 600;

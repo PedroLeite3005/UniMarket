@@ -18,6 +18,16 @@ window.onload = async function() {
   `;
       document.getElementById("produtos").innerHTML += conteudo;
   }
+
+  fetch("../PastaPHP/attTotalCarrinho.php", {
+	method: "GET"
+	})
+	.then(response => response.json())
+	.then(data => {
+		var novoTotal = data.novoTotal;	
+		var totalCarrinhoElement = document.getElementById("totalCarrinho");
+		totalCarrinhoElement.textContent = novoTotal;
+	});
 }
 
 function removerItemDoCarrinho(idProdutoCarrinho) {
@@ -47,14 +57,18 @@ async function atualizarTotalProduto(idProduto, novaQuantidade) {
     method: "POST",
     body: formData
   });
-  
+
   fetch("../PastaPHP/attTotalCarrinho.php", {
-    method: "GET"
-  })
-  .then(response => response.json())
-  .then(data => {
-      var totalCarrinhoElement = document.getElementById("totalCarrinho");
-      totalCarrinhoElement.textContent = data.total;
-  });
+	method: "GET"
+	})
+	.then(response => response.json())
+	.then(data => {
+		var novoTotal = data.novoTotal;	
+		var totalCarrinhoElement = document.getElementById("totalCarrinho");
+		totalCarrinhoElement.textContent = novoTotal;
+	})
+	.catch(error => {
+		console.error("Erro ao buscar o novo total do carrinho: " + error);
+	});
 
 }

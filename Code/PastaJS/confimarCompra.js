@@ -14,4 +14,32 @@ window.onload = async function() {
     `;
         document.getElementById("produtos").innerHTML += conteudo;
     }
+
+    fetch("../PastaPHP/attTotalCarrinho.php", {
+      method: "GET"
+      })
+      .then(response => response.json())
+      .then(data => {
+        var novoTotal = data.novoTotal;	
+        var total = document.getElementById("total");
+        total.textContent = novoTotal;
+      });
+
   }
+
+  function confirmar() {
+    fetch("../PastaPHP/confirmarLogin.php", {
+        method: "GET"
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.logged_in) {
+            window.location.href = "../Páginas/pagamento.html";
+        } else {
+            window.location.href = "../Páginas/login.html";
+        }
+    })
+    .catch(error => {
+        alert("Erro ao verificar o status de login.");
+    });
+}
