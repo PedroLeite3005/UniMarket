@@ -12,7 +12,6 @@ window.onload = async function() {
       <td><img src="../Data/ImgProd/${dados[i].id_produto}.png" class="card-img-top" alt="Imagem Produto" style="height: 2rem; width: 2rem"></td>
       <td>${dados[i].preco}</td>
       <td><input type="number" value="${dados[i].quantidade}" oninput="atualizarTotalProduto(${dados[i].id_produto}, this.value)"></td>
-      <td id="total_${dados[i].id_produto}">${dados[i].preco * dados[i].quantidade}</td>
       <td><button class="btn btn-danger" onclick="removerItemDoCarrinho(${dados[i].id_produto})">Remover</button></td>
     </tr>
   `;

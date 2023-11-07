@@ -2,10 +2,8 @@ CREATE SCHEMA IF NOT EXISTS unimarket;
 USE unimarket;
 
 DROP TABLE IF EXISTS produtos_carrinho;
-DROP TABLE IF EXISTS Pagamento;
 DROP TABLE IF EXISTS Carrinho;
 DROP TABLE IF EXISTS Produtos;
-DROP TABLE IF EXISTS Administrador;
 DROP TABLE IF EXISTS Cliente;
 
 CREATE TABLE IF NOT EXISTS Cliente (
@@ -28,12 +26,6 @@ CREATE TABLE IF NOT EXISTS Produtos (
 CREATE TABLE IF NOT EXISTS Carrinho (
     id_carrinho INT PRIMARY KEY,
     total DECIMAL(10,2)
-);
-
-CREATE TABLE IF NOT EXISTS Pagamento (
-    id_pagamento INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    preco_total DECIMAL(10, 2) NOT NULL,
-    metodo_de_pagamento VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS produtos_carrinho (

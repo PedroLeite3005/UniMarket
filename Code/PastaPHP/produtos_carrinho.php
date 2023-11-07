@@ -9,15 +9,14 @@ $id_carrinho = 0;
 $id_produto = $_POST['id_produto'];
 
 if ($id_produto) {
-    // Verifique se o produto já existe no carrinho
     $query = "SELECT * FROM produtos_carrinho WHERE id_produto = '$id_produto' AND id_carrinho = '$id_carrinho'";
     $result = mysqli_query($con, $query);
 
     if (mysqli_num_rows($result) > 0) {
         $response['message'] = "Produto já existe no carrinho.";
     } else {
-        // O produto não existe no carrinho, então insira-o
-        $query = "INSERT INTO produtos_carrinho (id_produto, id_carrinho, quantidade) VALUES ('$id_produto', '$id_carrinho', 1)";
+        $query = "INSERT INTO produtos_carrinho (id_produto, id_carrinho, quantidade) 
+        VALUES ('$id_produto', '$id_carrinho', 1)";
         $result = mysqli_query($con, $query);
 
         if ($result) {

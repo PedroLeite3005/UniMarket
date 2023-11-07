@@ -10,14 +10,14 @@ window.onload = async function(){
         <div class="container-fluid"> 
             <div class="row">
                 <div class="col-12">
-                        <div class="card d-inline-block my-2 mx-2 col-12">
-                            <div class="card-body text-center">
-                                <img src="../Data/ImgProd/${dados[i].id_produto}.png" class="card-img-top" alt="Imagem Produto" style="height: 13rem; width: 12rem;">
-                                <h5 class="card-title">${dados[i].nome}</h5>
-                                <p class="card-text">R$ ${dados[i].preco}</p>
-                                <button class="btn btn-primary col-12" type="button" onclick="addCarrinho(${dados[i].id_produto})">Adicionar ao carrinho</button>
-                            </div>
+                    <div class="card d-inline-block my-2 mx-2 col-12">
+                        <div class="card-body text-center">
+                            <img src="../Data/ImgProd/${dados[i].id_produto}.png" class="card-img-top" alt="Imagem Produto" style="height: 13rem; width: 12rem;">
+                            <h5 class="card-title">${dados[i].nome}</h5>
+                            <p class="card-text">R$ ${dados[i].preco}</p>
+                            <button class="btn btn-primary col-12" type="button" onclick="addCarrinho(${dados[i].id_produto})">Adicionar ao carrinho</button>
                         </div>
+                    </div>
                 </div>
             </div>
         </div> 
@@ -61,14 +61,12 @@ function postPesquisar(){
                 <div class="container-fluid"> 
                     <div class="row">
                         <div class="col-12">
-                            <div class="col-12">
-                                <div class="card d-inline-block my-2 mx-2">
-                                    <div class="card-body text-center">
-                                        <img src="../Data/ImgProd/${dados[i].id_produto}.png" class="card-img-top" alt="Imagem Produto">
-                                        <h5 class="card-title">${dados[i].nome}</h5>
-                                        <p class="card-text">R$ ${dados[i].preco}</p>
-                                        <a href="#" class="btn btn-primary col-12">Adicionar ao carrinho!</a>
-                                    </div>
+                            <div class="card d-inline-block my-2 mx-2 col-12">
+                                <div class="card-body text-center">
+                                    <img src="../Data/ImgProd/${dados[i].id_produto}.png" class="card-img-top" alt="Imagem Produto" style="height: 13rem; width: 12rem;">
+                                    <h5 class="card-title">${dados[i].nome}</h5>
+                                    <p class="card-text">R$ ${dados[i].preco}</p>
+                                    <button class="btn btn-primary col-12" type="button" onclick="addCarrinho(${dados[i].id_produto})">Adicionar ao carrinho</button>
                                 </div>
                             </div>
                         </div>
